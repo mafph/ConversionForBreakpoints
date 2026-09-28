@@ -1,0 +1,19 @@
+{
+	"name": "Conversion For Breakpoints",
+	"author": "I AM GREEN",
+	"version": "0.0.2",
+	"blt_version": 2,
+	"description": "Adds conversions so that more weapons can hit most breakpoints between 30 and 168 DMG",
+	"updates" : [
+	{
+		"provider" : "mws",
+		"identifier" : "59211",
+	}
+  ],
+	"hooks": [
+		{
+			"hook_id": "lib/tweak_data/weaponfactorytweakdata",
+			"script_path": "hooks/misc.lua"
+		}
+	]
+}
