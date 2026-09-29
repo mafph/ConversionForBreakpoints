@@ -1,9 +1,9 @@
 {
 	"name": "Conversion For Breakpoints",
 	"author": "I AM GREEN",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"blt_version": 2,
-	"description": "Adds conversions so that more weapons can hit most breakpoints between 30 and 168 DMG",
+	"description": "Adds conversions so that more weapons can hit most breakpoints between 30 and 168 DMG. Sniper rifles can be scaled to 168 / 256 / 480 DMG",
 	"updates" : [
 	{
 		"provider" : "mws",

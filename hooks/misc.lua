@@ -1,4 +1,7 @@
-Hooks:PostHook(WeaponFactoryTweakData, "init", "CAWABInit", function(self)
+local function apply_fixes(self)
+    if not self.parts.wpn_fps_ass_g3_sniper_kit then
+        return false  -- noch nicht da, spaeter nochmal
+    end
 -- G3
 self.parts.wpn_fps_ass_g3_sniper_kit.requires = {"wpn_fps_ass_g3_b_sniper"}
 table.insert(self.parts.wpn_fps_ass_g3_b_short.forbids, "wpn_fps_ass_g3_sniper_kit")
@@ -73,4 +76,14 @@ self.parts.wpn_fps_ass_sub2000_assault_kit.custom_stats = {
 		ammo_pickup_min_mul = 4,
 		ammo_pickup_max_mul = 3
 }
+
+	return true
+end
+
+Hooks:PostHook(WeaponFactoryTweakData, "init", "CAWABInit", function(self)
+	if not apply_fixes(self) then
+        Hooks:Add("BeardLibModulesLoaded", "CAWABDeferredFix", function()
+            apply_fixes(self)
+        end)
+    end
 end )
